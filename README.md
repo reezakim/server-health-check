@@ -3,14 +3,11 @@
 A Bash script that monitors **Disk**, **Memory**, and **CPU** Usage, and shows **CRITICAL** or **WARNING** when usage crosses a threshold.
 
 ## About
----
 This script checks disk usage / memory usage / CPU usage on a Linux server and reports the status as OK, WARNING, or CRITICAL to **Log** based on preset thresholds. This project was built to understand how Bash Scripting is used in real-world system administration and DevOps workflows, and to strengthen my problem-solving skills through hands-on practice.
 ## Prerequisites
----
 - Operating System : Linux Server / WSL
 - Installed GIT
 ## How To Use
----
 1. Clone this repository to your environment
    ```
    git clone https://github.com/reezakim/server-health-check.git
@@ -36,8 +33,6 @@ This script checks disk usage / memory usage / CPU usage on a Linux server and r
 ```
 
 ## Severity Levels
----
-
 | Severity | Meaning  | Exit Code |
 |----------|----------|-----------|
 | 0        | OK       | 0         |
