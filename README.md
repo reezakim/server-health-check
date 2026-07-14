@@ -33,6 +33,7 @@ This script checks disk usage / memory usage / CPU usage on a Linux server and r
 [Tue,14-07-2026 19:04:56] Severity: 0
 [Tue,14-07-2026 19:04:56] [CRITICAL] CPU Usage: 100%
 [Tue,14-07-2026 19:04:56] Severity: 2
+```
 
 ## Severity Levels
 ---
