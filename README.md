@@ -25,13 +25,14 @@ This script checks disk usage / memory usage / CPU usage on a Linux server and r
    ./healthcheck.sh
    ```
 
-Example Output :
-`[Tue,14-07-2026 19:04:56] Disk Usage: 7%`
-`[Tue,14-07-2026 19:04:56] Severity: 0`
-`[Tue,14-07-2026 19:04:56] Memory Usage: 19%`
-`[Tue,14-07-2026 19:04:56] Severity: 0`
-`[Tue,14-07-2026 19:04:56] [CRITICAL] CPU Usage: 100%`
-`[Tue,14-07-2026 19:04:56] Severity: 2`
+## Example Output :
+```
+[Tue,14-07-2026 19:04:56] Disk Usage: 7%
+[Tue,14-07-2026 19:04:56] Severity: 0
+[Tue,14-07-2026 19:04:56] Memory Usage: 19%
+[Tue,14-07-2026 19:04:56] Severity: 0
+[Tue,14-07-2026 19:04:56] [CRITICAL] CPU Usage: 100%
+[Tue,14-07-2026 19:04:56] Severity: 2
 
 ## Severity Levels
 ---
