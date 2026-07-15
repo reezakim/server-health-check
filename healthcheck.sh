@@ -1,7 +1,7 @@
 #!/bin/bash
 
 check_disk() {
-	disk_usage=$(df -h / | grep /dev | awk '{print $5}' | tr -d "%")
+	disk_usage=$(df -h / | awk 'NR==2{print $5}' | tr -d "%")
 	echo "$disk_usage"
 }
 
@@ -76,7 +76,7 @@ echo "[$time_server] $test_disk
 [$time_server] $test_mem
 [$time_server] Severity: $severity_mem
 [$time_server] $test_cpu
-[$time_server] Severity: $severity_cpu" | tee -a healthcheck.log
+[$time_server] Severity: $severity_cpu" | tee -a ./logs/healthcheck.log
 
 if [ "$severity_disk" -eq "2" ] || [ "$severity_mem" -eq "2" ] || [ "$severity_cpu" -eq "2" ]; then
 	exit 2
