@@ -5,15 +5,24 @@ A Bash script that monitors **Disk**, **Memory**, and **CPU** Usage, and shows *
 ## About
 This script checks disk usage / memory usage / CPU usage on a Linux server and reports the status as OK, WARNING, or CRITICAL to **Log** based on preset thresholds. This project was built to understand how Bash Scripting is used in real-world system administration and DevOps workflows, and to strengthen my problem-solving skills through hands-on practice.
 ## Prerequisites
-- Operating System : Linux Server / WSL
-- Installed GIT
+- **Bash** (Native on Linux/macOS, or via WSL/Git Bash on Windows)
+- **Docker Engine 20.10+** (Optional, for containerized execution)
+
+## Compatibility
+This script relies on standard GNU utilities (`df`, `free`, and `top` from the `procps` package). 
+It has been fully tested on:
+- Debian/Ubuntu (Both native installations and Docker `debian:bookworm-slim` images)
+
+> ⚠️ **Note on Alpine Linux:** This script is **not** out-of-the-box compatible with Alpine Linux (BusyBox) due to differences in `top` and `free` output formats. Modifying the parsing logic is required for Alpine support.
+
 ## How To Use
+### Option 1: Native Execution
 1. Clone this repository to your environment
    ```
    git clone https://github.com/reezakim/server-health-check.git
    cd server-health-check
    ```
-2. Give permissions to file script 
+2. Give executions permissions to file script 
    ```
    chmod +x healthcheck.sh
    ```
@@ -22,6 +31,21 @@ This script checks disk usage / memory usage / CPU usage on a Linux server and r
    ./healthcheck.sh
    ```
 
+### Option 2: Run via Docker
+1. Build the Docker image
+   ```
+   docker build -t health-check:latest .
+   ```
+
+2. Initialize the log directory (Required - see note below)
+   ```
+   mkdir -p logs
+   ```
+
+3. Run the container
+   ```
+   docker run --rm -v $(pwd)/logs:/automation/logs health-check:latest
+   ```
 ## Example Output :
 ```
 [Tue,14-07-2026 19:04:56] Disk Usage: 7%
